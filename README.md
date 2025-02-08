@@ -5,13 +5,6 @@
 * [Descripción](#descripción)
 * [Características](#características)
 * [Instalación](#instalación)
-* [Configuración](#configuración)
-* [Uso](#uso)
-* [Solución de Problemas](#solución-de-problemas)
-* [Preguntas Frecuentes](#preguntas-frecuentes)
-* [Contribución](#contribución)
-* [Licencia](#licencia)
-* [Créditos](#créditos)
 
 ## Descripción
 
