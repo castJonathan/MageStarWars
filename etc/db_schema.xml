@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="jcastillo_starwars_character" resource="default" engine="innodb" comment="Star Wars Characters Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="height" nullable="true" length="255" comment="Height"/>
+        <column xsi:type="varchar" name="mass" nullable="true" length="255" comment="Mass"/>
+        <column xsi:type="varchar" name="hair_color" nullable="true" length="255" comment="Hair Color"/>
+        <column xsi:type="varchar" name="skin_color" nullable="true" length="255" comment="Skin Color"/>
+        <column xsi:type="varchar" name="homeworld" nullable="true" length="255" comment="Homeworld"/>
+        <column xsi:type="text" name="films" nullable="true" comment="Films"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

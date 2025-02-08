@@ -1,0 +1,86 @@
+<!-- app/code/JCastillo/StarWars/view/frontend/templates/characterspage.phtml -->
+<?php
+$characters = $this->getCharacters();
+?>
+<style>
+    .characters-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .characters-table th, .characters-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .characters-table th {
+        background-color: #f4f4f4;
+    }
+    .characters-table tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+    .characters-table tr:hover {
+        background-color: #eaeaea;
+    }
+    #swapiCharacters {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .swapi-character-info {
+        font-size: 16px;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .swapi-character-info span {
+        font-weight: bold;
+        display: inline-block;
+        min-width: 120px;
+    }
+    .swapi-button {
+        margin: 5px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .swapi-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div id="charactersTableContainer">
+    <?php if (count($characters)): ?>
+        <table class="characters-table">
+            <thead>
+            <tr>
+                <th><?= __('Name') ?></th>
+                <th><?= __('Height') ?></th>
+                <th><?= __('Mass') ?></th>
+                <!-- Añade más encabezados según tus necesidades -->
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($characters as $character): ?>
+                <tr>
+                    <td><?= $block->escapeHtml($character->getName()) ?></td>
+                    <td><?= $block->escapeHtml($character->getHeight()) ?></td>
+                    <td><?= $block->escapeHtml($character->getMass()) ?></td>
+                    <!-- Añade más celdas según tus necesidades -->
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p><?= __('No characters found.') ?></p>
+    <?php endif; ?>
+</div>
+<br>
+<h1>Starwars API consumption</h1>
+<div id="swapiCharacters">
+    <button class="swapi-button" id="prevCharacter" onclick="loadPreviousCharacter()">Previous</button>
+    <button class="swapi-button" id="nextCharacter" onclick="loadNextCharacter()">Next</button>
+    <div class="swapi-character-info" id="swapiCharacterInfo"></div>
+</div>
+
+<script type="text/javascript" src="<?= $block->getViewFileUrl('JCastillo_StarWars::js/characters.js') ?>"></script>

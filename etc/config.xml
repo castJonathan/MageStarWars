@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <StarWars>
+                <payment_action>authorize</payment_action> <!-- You can use another method -->
+                <model>JCastillo\StarWars\Model\StarWarsPaymetMethod</model>
+                <active>1</active>
+                <title>StarWars Payment Method</title>
+                <order_status>pending_payment</order_status><!-- set default order status-->
+                <group>offline</group>
+            </StarWars>
+        </payment>
+    </default>
+</config>

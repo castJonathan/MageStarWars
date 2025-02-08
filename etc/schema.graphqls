@@ -1,0 +1,14 @@
+#Custom Module StarWars
+type Query {
+    starWarsCharacters: [StarWarsCharacter] @resolver(class: "JCastillo\\StarWars\\Model\\Api\\Resolver\\CharactersGQL")
+}
+
+type StarWarsCharacter {
+    entity_id: Int
+    name: String
+    height: String
+    mass: String
+    hair_color: String
+    skin_color: String
+    homeworld: String
+}
